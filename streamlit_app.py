@@ -39,13 +39,13 @@ try:
 except URLError as e:
   streamlit.error()
   
-streamlit.stop()
+#streamlit.stop()
 
 my_cur.execute("select * from FRUIT_LOAD_LIST")
 streamlit.header("fruit load list contain")
 
 def get_fruit_list():
-  with my_cnx.cursor() as my_cur
+  with my_cnx.cursor() as my_cur:
        my_cur.execute("select * from FRUIT_LOAD_LIST")
        return my_cur.fetchall()
 
@@ -57,4 +57,4 @@ if streamlit.button('Get Fruit Load List'):
 add_my_fruit = streamlit.text_input('What fruit would you like to add?')
 streamlit.write('Thanks for adding ', add_my_fruit)
 
-my_cur.execute("insert into FRUIT_LOAD_LIST values ('from streamlit')")
+#my_cur.execute("insert into FRUIT_LOAD_LIST values ('from streamlit')")
