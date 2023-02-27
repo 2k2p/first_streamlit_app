@@ -41,7 +41,6 @@ except URLError as e:
   
 #streamlit.stop()
 
-my_cur.execute("select * from FRUIT_LOAD_LIST")
 streamlit.header("fruit load list contain")
 
 def get_fruit_list():
